@@ -39,20 +39,6 @@ services:
       - "/dev/snd:/dev/snd"
     command: gst-launch-1.0 -v alsasrc device=hw:1 ! audioconvert ! audioresample ! opusenc ! rtpopuspay ! queue max-size-bytes=0 max-size-buffers=0 ! udpsink host=127.0.0.1 port=5002
 
-  fruitnanny:
-    build: ./fruitnanny
-    restart: always
-    privileged: true
-    network_mode: "host"
-    depends_on:
-      - janus
-    devices:
-      - "/dev/gpiochip0:/dev/gpiochip0"
-      - "/dev/gpiochip1:/dev/gpiochip1"
-      - "/dev/gpiomem:/dev/gpiomem"
-    expose:
-      - 7000
-
   nginx:
     image: arm32v7/nginx
     restart: always

@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>PyNanny</title>
+
+<link rel="shortcut icon" href="/{{ url_for('static', path='project/favicon/favicon.ico') }}">
+<link rel="icon" sizes="16x16 32x32 64x64" href="/{{ url_for('static', path='project/favicon/favicon.ico') }}">
+
+
+<!-- Tell the browser to be responsive to screen width -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+
+
+<!--script src="//localhost:35729/livereload.js"></script-->
+
+<!-- jQuery 2.2.3 -->
+<script type="text/javascript" src="{{ url_for('static', path='thirdparty/js/jquery-2.2.3.min.js') }}"></script>
+
+<script type="text/javascript">
+const config = {{ config }}
+</script>

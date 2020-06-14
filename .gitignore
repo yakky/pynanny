@@ -45,3 +45,5 @@ jspm_packages
 
 # Typescript
 .tscache/
+pynanny/.venv/
+.env/
