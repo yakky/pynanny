@@ -37,10 +37,11 @@ services:
       - janus
     devices:
       - "/dev/snd:/dev/snd"
-    command: gst-launch-1.0 -v alsasrc device=hw:1 ! audioconvert ! audioresample ! opusenc ! rtpopuspay ! queue max-size-bytes=0 max-size-buffers=0 ! udpsink host=127.0.0.1 port=5002
+        #command: gst-launch-1.0 -v pulsesrc device=microphone ! audioconvert ! audioresample ! opusenc ! rtpopuspay ! queue max-size-bytes=0 max-size-buffers=0 ! udpsink host=127.0.0.1 port=5002
+    command: "/audio_entry.sh"
 
   nginx:
-    image: arm32v7/nginx
+    image: arm32v6/nginx:alpine
     restart: always
     network_mode: "host"
     depends_on:
